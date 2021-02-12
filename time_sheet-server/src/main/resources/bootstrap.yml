@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: time-sheet
+  profiles:
+    active: development
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: XiaoqingDing
