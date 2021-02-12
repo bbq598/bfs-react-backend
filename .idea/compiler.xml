@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="service_discovery" />
+        <module name="timesheetcore-server" />
         <module name="time_sheet-server" />
         <module name="config-server" />
         <module name="test" />
@@ -18,6 +19,7 @@
       <module name="gateway" target="1.8" />
       <module name="service_discovery" target="1.8" />
       <module name="test" target="1.8" />
+      <module name="timesheetcore-server" target="1.8" />
       <module name="time_sheet-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -27,6 +29,7 @@
       <module name="gateway" options="-parameters" />
       <module name="service_discovery" options="-parameters" />
       <module name="test" options="-parameters" />
+      <module name="timesheetcore-server" options="-parameters" />
       <module name="time_sheet-server" options="-parameters" />
     </option>
   </component>
