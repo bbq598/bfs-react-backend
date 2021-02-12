@@ -15,3 +15,7 @@ spring:
           uri: lb://movie-store
           predicates:
             - Path=/movie/**
+        - id: time-sheet
+          uri: lb://time-sheet
+          predicates:
+            - Path=/test/**
