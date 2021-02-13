@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,8 +10,8 @@
         <module name="config-server" />
         <module name="timesheet" />
         <module name="test" />
+        <module name="time_sheet_core-server" />
         <module name="service_discovery" />
-        <module name="timesheetcore-server" />
         <module name="time_sheet-server" />
         <module name="gateway" />
       </profile>
@@ -21,8 +22,10 @@
       <module name="service_discovery" target="1.8" />
       <module name="test" target="1.8" />
       <module name="time_sheet-server" target="1.8" />
+      <module name="time_sheet_core-server" target="1.8" />
       <module name="timesheet" target="1.8" />
       <module name="timesheetcore-server" target="1.8" />
+      <module name="wrapper" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -32,6 +35,7 @@
       <module name="service_discovery" options="-parameters" />
       <module name="test" options="-parameters" />
       <module name="time_sheet-server" options="-parameters" />
+      <module name="time_sheet_core-server" options="-parameters" />
       <module name="timesheet" options="-parameters" />
       <module name="timesheetcore-server" options="-parameters" />
     </option>

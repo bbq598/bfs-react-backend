@@ -1,11 +1,10 @@
-package com.bfs.timeSheetCore.model;
+package com.bfs.time_sheet_coreserver.model;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,6 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class WeekSheet {
     @Id
     private String id;
+    private Boolean isDefault;
     private String userName;
     private String weekEnding;
     private Integer totalHour;
@@ -23,6 +23,4 @@ public class WeekSheet {
     private String approvalStatus;
     private String comment;
     private List<Day> days;
-
-
 }
