@@ -8,8 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/service_discovery/service_discovery.iml" filepath="$PROJECT_DIR$/service_discovery/service_discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/time_sheet-server/time_sheet-server.iml" filepath="$PROJECT_DIR$/time_sheet-server/time_sheet-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/time_sheet_core-server/time_sheet_core-server.iml" filepath="$PROJECT_DIR$/time_sheet_core-server/time_sheet_core-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/timesheetcore-server/timesheet.iml" filepath="$PROJECT_DIR$/timesheetcore-server/timesheet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/timesheetcore-server/timesheetcore-server.iml" filepath="$PROJECT_DIR$/timesheetcore-server/timesheetcore-server.iml" />
     </modules>
   </component>
 </project>
