@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: timesheet-core
-  profiles:
-    active: development
-  cloud:
-    config:
-      uri: http://localhost:8888
-      label: Kevin
