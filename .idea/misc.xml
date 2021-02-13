@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/timesheetcore-server/pom.xml" />
         <option value="$PROJECT_DIR$/time_sheet-server/pom.xml" />
+        <option value="$PROJECT_DIR$/time_sheet_core-server/pom.xml" />
       </list>
     </option>
   </component>

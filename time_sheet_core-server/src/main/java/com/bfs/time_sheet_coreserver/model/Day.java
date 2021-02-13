@@ -1,4 +1,4 @@
-package com.bfs.timeSheetCore.model;
+package com.bfs.time_sheet_coreserver.model;
 
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
