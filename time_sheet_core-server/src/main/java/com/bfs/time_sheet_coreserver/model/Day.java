@@ -13,6 +13,8 @@ public class Day {
     private String date;
     private String start;
     private String end;
+    private Integer hours;
+    private String week;
     private boolean isFloatingDate;
     private boolean isHoliday;
     private boolean isVacation;

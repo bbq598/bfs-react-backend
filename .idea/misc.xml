@@ -6,16 +6,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/service_discovery/pom.xml" />
-        <option value="$PROJECT_DIR$/config-server/pom.xml" />
-        <option value="$PROJECT_DIR$/test/pom.xml" />
-        <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/timesheetcore-server/pom.xml" />
-        <option value="$PROJECT_DIR$/time_sheet-server/pom.xml" />
-        <option value="$PROJECT_DIR$/time_sheet_core-server/pom.xml" />
-        <option value="$PROJECT_DIR$/auth-server/pom.xml" />
         <option value="$PROJECT_DIR$/employee_core-server/pom.xml" />
-        <option value="$PROJECT_DIR$/employee_server/pom.xml" />
       </list>
     </option>
   </component>
