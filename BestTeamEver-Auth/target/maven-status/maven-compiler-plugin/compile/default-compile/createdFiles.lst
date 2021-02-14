@@ -1,0 +1,14 @@
+com\bfs\auth\config\HibernateConfig.class
+com\bfs\auth\entity\UserRole.class
+com\bfs\auth\AuthApplication.class
+com\bfs\auth\utils\JwtUtil.class
+com\bfs\auth\dao\UserDAO.class
+com\bfs\auth\ServletInitializer.class
+com\bfs\auth\entity\User.class
+com\bfs\auth\service\UserService.class
+com\bfs\auth\utils\CookieUtil.class
+com\bfs\auth\domain\Test.class
+com\bfs\auth\entity\Role.class
+com\bfs\auth\config\HibernateProperty.class
+com\bfs\auth\controller\TestController.class
+com\bfs\auth\controller\LoginController.class
