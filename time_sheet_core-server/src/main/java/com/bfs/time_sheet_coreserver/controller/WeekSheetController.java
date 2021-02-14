@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +24,10 @@ public class WeekSheetController {
 
     @PostMapping("/get")
     public List<WeekSheet> getWeekSheetByName(@RequestBody Map<String, String> name){
-        return weekSheetRepository.findByUserName(name.get("name"));
+        List<WeekSheet> list =  weekSheetRepository.findByUserName(name.get("name"));
+        list.removeIf(p -> p.getIsDefault()!=null&&p.getIsDefault()==true);
+        Collections.sort(list, Collections.reverseOrder());
+        return list;
     }
 
     @PostMapping("get/default")
