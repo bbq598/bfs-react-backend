@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: employee
+  profiles:
+    active: development
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: JunhaoLi
