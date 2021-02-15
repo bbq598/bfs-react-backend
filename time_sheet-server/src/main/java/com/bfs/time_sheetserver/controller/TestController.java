@@ -19,6 +19,8 @@ public class TestController {
 
     @GetMapping("/message")
     public ResponseEntity<String> getMessage() {
+        System.out.println("request.getRequestURL()" );
+
         return ResponseEntity.ok("Message from " + cloudConfig.getUserRole()  );
     }
 

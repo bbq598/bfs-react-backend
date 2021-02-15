@@ -19,3 +19,9 @@ spring:
           uri: lb://time-sheet
           predicates:
             - Path=/time/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+

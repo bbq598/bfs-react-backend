@@ -5,6 +5,8 @@ import com.bfs.authserver.model.AuthenticationRequest;
 import com.bfs.authserver.service.MyUserDetailsService;
 import com.bfs.authserver.utils.CookieUtil;
 import com.bfs.authserver.utils.JwtUtil;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -33,7 +35,6 @@ public class AuthController {
 
     @PostMapping("/auth")
     public String createAuthToken(HttpServletResponse response, AuthenticationRequest authenticationRequest) throws Exception{
-        System.out.println(authenticationRequest.toString());
         try{
             authenticationManager.authenticate(
               new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword())
@@ -44,9 +45,11 @@ public class AuthController {
         final UserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
         final String jwt = jwtUtil.generateToken(userDetails);
+        System.out.println(jwt);
         CookieUtil.create(response, jwtTokenCookieName, jwt, false, -1, "localhost");
         String redirect = authenticationRequest.getRedirect();
         if(redirect==null) return "redirect:auth";
-        return "redirect:"+redirect.substring(redirect.indexOf("?direct=")+8);
+        System.out.println(redirect.substring(redirect.indexOf("?redirect=")+10));
+        return "redirect:"+redirect.substring(redirect.indexOf("?redirect=")+10);
     }
 }
