@@ -5,6 +5,7 @@ import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -27,12 +28,12 @@ public class EmployeeFallback implements EmployeeClient{
     }
 
     @Override
-    public List<Contact> getContact(Map<String, String> name) {
+    public Contact getContactByUserId(Map<String, String> map) {
         return null;
     }
 
     @Override
-    public Contact updateContact(Contact contact) {
+    public String getFloatingDayByUserId(Map<String, String> map) {
         return null;
     }
 

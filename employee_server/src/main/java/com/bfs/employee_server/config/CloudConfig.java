@@ -11,6 +11,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RefreshScope
 public class CloudConfig {
-    @Value("${user.role}")
     private String userRole;
 }
