@@ -47,6 +47,6 @@ public class AuthController {
         CookieUtil.create(response, jwtTokenCookieName, jwt, false, -1, "localhost");
         String redirect = authenticationRequest.getRedirect();
         if(redirect==null) return "redirect:auth";
-        return "redirect:"+redirect.substring(redirect.indexOf("?direct=")+8);
+        return "redirect:"+redirect.substring(redirect.indexOf("?redirect=")+10);
     }
 }
