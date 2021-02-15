@@ -32,12 +32,12 @@ public class EmployeeController {
     }
 
     @PostMapping("/updateContactById")
-    public Contact updateContactById(@RequestBody Map<String, String> map) {
+    public Contact updateContactById(@RequestBody Contact contact) {
         Integer update = contactRepository.updateContactById(
-                map.get("phone"), map.get("email"), map.get("homeAddress"),
-                map.get("ec1FirstName"), map.get("ec1LastName"), map.get("ec1Phone"),
-                map.get("ec2FirstName"), map.get("ec2LastName"), map.get("ec2Phone"),
-                Integer.parseInt(map.get("floatingDay")), Integer.parseInt(map.get("userId")));
-        return contactRepository.findContactByUserId(Integer.parseInt(map.get("userId")));
+                contact.getPhone(), contact.getEmail(), contact.getHomeAddress(),
+                contact.getEc1FirstName(), contact.getEc1LastName(), contact.getEc1Phone(),
+                contact.getEc2FirstName(), contact.getEc2LastName(), contact.getEc2Phone(),
+                contact.getFloatingDay(), contact.getUserId());
+        return contactRepository.findContactByUserId(contact.getUserId());
     }
 }
