@@ -2,12 +2,14 @@ package com.bfs.employee_server.client;
 
 import com.bfs.employee_server.domain.Contact;
 import feign.FeignException;
+import jdk.nashorn.internal.runtime.options.Option;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class EmployeeFallback implements EmployeeClient{
 
@@ -34,6 +36,11 @@ public class EmployeeFallback implements EmployeeClient{
 
     @Override
     public String getFloatingDayByUserId(Map<String, String> map) {
+        return null;
+    }
+
+    @Override
+    public Contact updateContactById(Map<String, String> map) {
         return null;
     }
 
