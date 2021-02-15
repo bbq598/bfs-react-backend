@@ -1,4 +1,4 @@
-package com.bfs.authserver.Filter;
+package com.bfs.authserver.filter;
 
 import com.bfs.authserver.service.MyUserDetailsService;
 import com.bfs.authserver.utils.JwtUtil;

@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @Document(collection = "time_sheet")
 public class Day {
+    private String week;
+    private Integer hours;
     private String date;
     private String start;
     private String end;
