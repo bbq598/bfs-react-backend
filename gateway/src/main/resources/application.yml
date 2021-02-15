@@ -19,3 +19,7 @@ spring:
           uri: lb://time-sheet
           predicates:
             - Path=/time/**
+        - id: employee
+          uri: lb://employee
+          predicates:
+            - Path=/employee/**

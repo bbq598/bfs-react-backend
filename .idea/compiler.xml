@@ -14,8 +14,8 @@
         <module name="auth" />
         <module name="auth-server" />
         <module name="time_sheet-server" />
-        <module name="service_discovery" />
         <module name="employee_core-server" />
+        <module name="service_discovery" />
         <module name="employee_server" />
         <module name="gateway" />
       </profile>
