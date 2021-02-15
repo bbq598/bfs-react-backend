@@ -4,12 +4,14 @@ import com.bfs.employee_server.domain.Contact;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @FeignClient(name = "employee-core", fallbackFactory = EmployeeFallbackFactory.class)
 public interface EmployeeClient {
@@ -22,4 +24,7 @@ public interface EmployeeClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/getFloatingDayByUserId", produces = "application/json")
     String getFloatingDayByUserId(Map<String, String> map);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/updateContactById", produces = "application/json")
+    Contact updateContactById(Map<String, String> map);
 }
