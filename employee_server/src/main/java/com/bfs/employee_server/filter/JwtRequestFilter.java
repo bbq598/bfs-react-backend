@@ -1,12 +1,10 @@
-package com.bfs.time_sheetserver.filter;
+package com.bfs.employee_server.filter;
 
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import org.apache.http.HttpStatus;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

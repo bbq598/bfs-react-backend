@@ -1,8 +1,10 @@
 package com.bfs.authserver.utils;
 
+import com.bfs.authserver.repository.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import java.util.function.Function;
 
 @Service
 public class JwtUtil {
+    @Autowired
+    private UserRepository userRepository;
 
     private String SECRET_KEY = "bfs2";
 
@@ -28,7 +32,7 @@ public class JwtUtil {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
     }
-    private Claims extractAllClaims(String token) {
+    public Claims extractAllClaims(String token) {
         return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
     }
 
@@ -38,7 +42,8 @@ public class JwtUtil {
 
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("username", userDetails.getUsername());
+        String name = userDetails.getUsername();
+        claims.put("username", name +"?userId="+userRepository.findFirst1ByUsername(name).getId());
         return createToken(claims, userDetails.getUsername());
     }
 
