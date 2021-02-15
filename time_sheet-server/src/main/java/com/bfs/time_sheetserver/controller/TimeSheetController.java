@@ -40,7 +40,11 @@ public class TimeSheetController {
 
     @PostMapping("/getTimeSheet")
     public List<WeekSheet> getTimeSheet(@RequestBody Map<String, String> name){
-        return timeSheetClient.getTimeSheet(name);
+        List<WeekSheet> weekSheets = timeSheetClient.getTimeSheet(name);
+        for (int i = 0; i < weekSheets.size(); i++) {
+            weekSheets.get(i).setFloatingDay();
+        }
+        return weekSheets;
     }
 
     @PostMapping("/updateWeekSheet")

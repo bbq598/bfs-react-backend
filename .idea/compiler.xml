@@ -11,6 +11,8 @@
         <module name="timesheet" />
         <module name="test" />
         <module name="time_sheet_core-server" />
+        <module name="auth" />
+        <module name="auth-server" />
         <module name="time_sheet-server" />
         <module name="employee_core-server" />
         <module name="service_discovery" />
