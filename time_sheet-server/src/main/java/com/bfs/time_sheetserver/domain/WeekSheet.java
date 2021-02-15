@@ -18,6 +18,7 @@ public class WeekSheet {
     private String comment;
     private List<Day> days;
     private Integer floatingDay;
+    private Integer floatDayLeft;
 
     public void setFloatingDay() {
         int n = 0;

@@ -1,5 +1,6 @@
 package com.bfs.time_sheetserver.controller;
 
+import com.bfs.time_sheetserver.client.EmployeeClient;
 import com.bfs.time_sheetserver.client.TimeSheetClient;
 import com.bfs.time_sheetserver.config.CloudConfig;
 import com.bfs.time_sheetserver.domain.WeekSheet;
@@ -7,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +22,9 @@ public class TimeSheetController {
 
     @Autowired
     private TimeSheetClient timeSheetClient;
+
+    @Autowired
+    private EmployeeClient employeeClient;
 
     @GetMapping("/message")
     public ResponseEntity<String> getMessage() {
@@ -34,15 +40,24 @@ public class TimeSheetController {
     public void getTimeSheet(){
         Map name = new HashMap();
         name.put("name", "tiger");
+        Map id = new HashMap();
+        id.put("userId", "1");
+        LinkedHashMap<String, String> floatid = employeeClient.getFloatingDayByUserId(id);
+        System.out.println(floatid.get("floatingDay"));
+        System.out.println(floatid);
         List<WeekSheet> data= timeSheetClient.getTimeSheet(name);
         System.out.println(data.toString());
     }
 
     @PostMapping("/getTimeSheet")
-    public List<WeekSheet> getTimeSheet(@RequestBody Map<String, String> name){
+    public List<WeekSheet> getTimeSheet(HttpServletRequest request, @RequestBody Map<String, String> name){
         List<WeekSheet> weekSheets = timeSheetClient.getTimeSheet(name);
+        Map id = new HashMap();
+        id.put("userId", "1");
+        LinkedHashMap<String, String> floatid = employeeClient.getFloatingDayByUserId(id);
         for (int i = 0; i < weekSheets.size(); i++) {
             weekSheets.get(i).setFloatingDay();
+            weekSheets.get(i).setFloatDayLeft(Integer.parseInt(floatid.get("floatingDay")));
         }
         return weekSheets;
     }
@@ -50,5 +65,10 @@ public class TimeSheetController {
     @PostMapping("/updateWeekSheet")
     public WeekSheet updateWeekSheet(@RequestBody WeekSheet weekSheet) {
         return timeSheetClient.updateWeekSheet(weekSheet);
+    }
+
+    @PostMapping("getFloatingDayByUserId")
+    public LinkedHashMap<String, String> getFloatingDayByUserId(@RequestBody Map<String, String> map) {
+        return employeeClient.getFloatingDayByUserId(map);
     }
 }
