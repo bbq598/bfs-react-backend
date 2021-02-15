@@ -12,13 +12,15 @@
         <module name="test" />
         <module name="time_sheet_core-server" />
         <module name="time_sheet-server" />
-        <module name="service_discovery" />
         <module name="employee_core-server" />
+        <module name="service_discovery" />
         <module name="employee_server" />
         <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
+      <module name="auth-server" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="employee_core-server" target="1.8" />
       <module name="employee_server" target="1.8" />
@@ -34,6 +36,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth" options="-parameters" />
+      <module name="auth-server" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="employee_core-server" options="-parameters" />
       <module name="employee_server" options="-parameters" />
