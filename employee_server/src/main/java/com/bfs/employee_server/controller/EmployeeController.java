@@ -4,6 +4,7 @@ import com.bfs.employee_server.client.EmployeeClient;
 import com.bfs.employee_server.config.CloudConfig;
 import com.bfs.employee_server.domain.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
