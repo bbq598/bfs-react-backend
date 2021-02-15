@@ -1,0 +1,16 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:mysql://team-proj-2-mysql.czznqc9erwsv.us-east-2.rds.amazonaws.com:3306/db?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: dev123
+    username: dev
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
