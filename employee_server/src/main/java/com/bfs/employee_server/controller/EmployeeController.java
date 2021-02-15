@@ -37,8 +37,8 @@ public class EmployeeController {
     }
 
     @PostMapping("updateContactById")
-    public Contact updateContactById(@RequestBody Map<String, String> map) {
+    public Contact updateContactById(@RequestBody Contact contact) {
         System.out.println("server-controller");
-        return employeeClient.updateContactById(map);
+        return employeeClient.updateContactById(contact);
     }
 }
