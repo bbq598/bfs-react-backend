@@ -40,7 +40,7 @@ public class EmployeeFallback implements EmployeeClient{
     }
 
     @Override
-    public Contact updateContactById(Map<String, String> map) {
+    public Contact updateContactById(Contact contact) {
         return null;
     }
 

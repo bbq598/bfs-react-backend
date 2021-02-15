@@ -25,6 +25,6 @@ public interface EmployeeClient {
     @RequestMapping(method = RequestMethod.POST, value = "/getFloatingDayByUserId", produces = "application/json")
     String getFloatingDayByUserId(Map<String, String> map);
 
-    @RequestMapping(method = RequestMethod.POST, value = "/updateContactById", produces = "application/json")
-    Contact updateContactById(Map<String, String> map);
+    @RequestMapping(method = RequestMethod.POST, value = "/updateContactById")
+    Contact updateContactById(Contact contact);
 }
