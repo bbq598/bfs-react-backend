@@ -25,10 +25,19 @@ public class EmployeeController {
     @PostMapping("/getFloatingDayByUserId")
     public LinkedHashMap<String, String> getFloatingDayByUserId(@RequestBody Map<String, String> map) {
         String userId = map.get("userId").toString();
-        String floatingDay = contactRepository.findContactByUserId(Integer.parseInt(userId)).getFloatingDay();
+        Integer floatingDay = contactRepository.findContactByUserId(Integer.parseInt(userId)).getFloatingDay();
         LinkedHashMap<String, String> ans = new LinkedHashMap<>();
-        ans.put("floatingDay", floatingDay);
+        ans.put("floatingDay", floatingDay.toString());
         return ans;
     }
 
+    @PostMapping("/updateContactById")
+    public Contact updateContactById(@RequestBody Map<String, String> map) {
+        Integer update = contactRepository.updateContactById(
+                map.get("phone"), map.get("email"), map.get("homeAddress"),
+                map.get("ec1FirstName"), map.get("ec1LastName"), map.get("ec1Phone"),
+                map.get("ec2FirstName"), map.get("ec2LastName"), map.get("ec2Phone"),
+                Integer.parseInt(map.get("floatingDay")), Integer.parseInt(map.get("userId")));
+        return contactRepository.findContactByUserId(Integer.parseInt(map.get("userId")));
+    }
 }

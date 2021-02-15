@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/employee")
@@ -33,5 +34,11 @@ public class EmployeeController {
     @PostMapping("getFloatingDayByUserId")
     public String getFloatingDayByUserId(@RequestBody Map<String, String> map) {
         return employeeClient.getFloatingDayByUserId(map);
+    }
+
+    @PostMapping("updateContactById")
+    public Contact updateContactById(@RequestBody Map<String, String> map) {
+        System.out.println("server-controller");
+        return employeeClient.updateContactById(map);
     }
 }
