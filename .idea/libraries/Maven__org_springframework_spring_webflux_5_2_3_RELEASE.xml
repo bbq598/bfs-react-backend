@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webflux/5.2.3.RELEASE/spring-webflux-5.2.3.RELEASE-sources.jar!/" />
+
     </SOURCES>
   </library>
 </component>
