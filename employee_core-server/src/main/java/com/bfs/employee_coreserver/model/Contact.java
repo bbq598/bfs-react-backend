@@ -40,6 +40,6 @@ public class Contact implements Serializable {
     @Column(name = "emergencycontact2phone")
     private String ec2Phone;
     @Column(name = "floatingday")
-    private String floatingDay;
+    private Integer floatingDay;
 
 }

@@ -12,6 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableEurekaClient
 @EnableFeignClients
 @EnableCircuitBreaker
+@EnableSwagger2
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 public class EmployeeServerApplication {
 
