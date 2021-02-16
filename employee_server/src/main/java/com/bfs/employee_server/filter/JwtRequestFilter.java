@@ -29,7 +29,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             return;
         }
         if(jwtUtil.isTokenExpired(jwt)){
-            response.setStatus(HttpServletResponse.SC_OK);
+            response.setStatus(2200);
             response.sendRedirect("http://localhost:9999/auth?redirect="+request.getRequestURI());
            return;
         }
