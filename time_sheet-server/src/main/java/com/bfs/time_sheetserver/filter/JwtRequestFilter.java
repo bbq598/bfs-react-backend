@@ -2,11 +2,9 @@ package com.bfs.time_sheetserver.filter;
 
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import org.apache.http.HttpStatus;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +19,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         JwtUtil jwtUtil = new JwtUtil();
         final String authorizationHeader = request.getHeader("Authorization");
         String jwt = null;
-        if(authorizationHeader!=null&&authorizationHeader.startsWith("Bearer ")){
+        if(authorizationHeader!=null&&authorizationHeader.startsWith("Bearer ")&&authorizationHeader.length() > 20){
             jwt = authorizationHeader.substring(7);
         }else {
             response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);

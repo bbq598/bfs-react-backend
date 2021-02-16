@@ -8,6 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class Day {
+    private String week;
+    private Integer hours;
     private String date;
     private String start;
     private String end;

@@ -50,10 +50,14 @@ public class TimeSheetController {
     }
 
     @PostMapping("/getTimeSheet")
-    public List<WeekSheet> getTimeSheet(HttpServletRequest request, @RequestBody Map<String, String> name){
+    public List<WeekSheet> getTimeSheet(HttpServletRequest request){
+        System.out.println("username: " + request.getAttribute("username"));
+        System.out.println("userId: " + request.getAttribute("userId"));
+        Map name = new HashMap();
+        name.put("name",request.getAttribute("username"));
         List<WeekSheet> weekSheets = timeSheetClient.getTimeSheet(name);
         Map id = new HashMap();
-        id.put("userId", "1");
+        id.put("userId", request.getAttribute("userId"));
         LinkedHashMap<String, String> floatid = employeeClient.getFloatingDayByUserId(id);
         for (int i = 0; i < weekSheets.size(); i++) {
             weekSheets.get(i).setFloatingDay();
@@ -62,10 +66,17 @@ public class TimeSheetController {
         return weekSheets;
     }
 
+
     @PostMapping("/updateWeekSheet")
     public WeekSheet updateWeekSheet(@RequestBody WeekSheet weekSheet) {
         return timeSheetClient.updateWeekSheet(weekSheet);
     }
+
+    @PostMapping("/setDefault")
+    public WeekSheet addDefault(@RequestBody WeekSheet weekSheet) {
+        return timeSheetClient.addDefault(weekSheet);
+    }
+
 
     @PostMapping("getFloatingDayByUserId")
     public LinkedHashMap<String, String> getFloatingDayByUserId(@RequestBody Map<String, String> map) {

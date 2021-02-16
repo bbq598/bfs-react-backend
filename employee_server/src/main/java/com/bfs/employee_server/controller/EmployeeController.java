@@ -8,6 +8,8 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
@@ -28,8 +30,10 @@ public class EmployeeController {
 
 
     @PostMapping("/getContactByUserId")
-    public Contact getContactByUserId(@RequestBody Map<String, String> map) {
-        return employeeClient.getContactByUserId(map);
+    public Contact getContactByUserId(HttpServletRequest request) {
+        Map name = new HashMap();
+        name.put("userId", request.getAttribute("userId"));
+        return employeeClient.getContactByUserId(name);
     }
 
     @PostMapping("getFloatingDayByUserId")
