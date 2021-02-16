@@ -22,12 +22,14 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         if(authorizationHeader!=null&&authorizationHeader.startsWith("Bearer ")&&authorizationHeader.length() > 20){
             jwt = authorizationHeader.substring(7);
         }else {
-            response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
+            response.setStatus(2200);
+            System.out.println("already here");
+//            response.sendRedirect("www.baidu.com");
             response.setHeader("Location", "http://localhost:9999/auth?redirect="+request.getRequestURI());
             return;
         }
         if(jwtUtil.isTokenExpired(jwt)){
-            response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
+            response.setStatus(HttpServletResponse.SC_OK);
             response.sendRedirect("http://localhost:9999/auth?redirect="+request.getRequestURI());
            return;
         }
