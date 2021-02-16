@@ -21,4 +21,7 @@ public interface TimeSheetClient {
     @RequestMapping(method = RequestMethod.POST, value = "/update")
     WeekSheet updateWeekSheet(WeekSheet weekSheet);
 
+    @RequestMapping(method = RequestMethod.POST, value = "/add/default")
+    WeekSheet addDefault(WeekSheet weekSheet);
+
 }

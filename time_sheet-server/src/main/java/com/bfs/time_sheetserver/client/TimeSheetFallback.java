@@ -37,4 +37,9 @@ public class TimeSheetFallback implements TimeSheetClient{
         return null;
     }
 
+    @Override
+    public WeekSheet addDefault(WeekSheet weekSheet) {
+        return null;
+    }
+
 }

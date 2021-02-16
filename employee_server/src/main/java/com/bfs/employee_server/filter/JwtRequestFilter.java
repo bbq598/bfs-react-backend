@@ -19,7 +19,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         JwtUtil jwtUtil = new JwtUtil();
         final String authorizationHeader = request.getHeader("Authorization");
         String jwt = null;
-        if(authorizationHeader!=null&&authorizationHeader.startsWith("Bearer ")){
+        if(authorizationHeader!=null&&authorizationHeader.startsWith("Bearer ")&&authorizationHeader.length() > 20){
             jwt = authorizationHeader.substring(7);
         }else {
             response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
